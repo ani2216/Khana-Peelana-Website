@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+#loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	width: 80px;
+	height: 80px;
+	margin: -76px 0 0 -76px;
+	border: 12px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 12px solid rgb(74, 178, 212);
+	border-bottom: 12px solid rgb(74, 178, 212);
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	}
+
+	@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+	}
+
+#custom{
+	display: none;
+	width: 700px;
+	height: 300px;
+	margin-top: 100px;
+	margin-left: 300px;
+	background: white;
+	border: 2px solid black;
+	box-shadow: 10px 10px 10px black;
+}
+
+#custom h1{
+	text-decoration: underline;
+	text-align: center;
+}
+
+#custom button{
+	margin-top: 50px;
+	margin-left: 200px;
+	width: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: rgb(92, 86, 86);
+	background: rgb(235, 230, 230);
+	box-shadow: 3px 3px 3px black;
+	cursor: pointer;
+}
+
+#custom #cancel{
+	margin-left: 10px;
+}
+
+#custom button:hover{
+	background: black;
+	color: #f1f1f1;
+}
+</style>
+<body onload="myFunction()">
+	<div id="loader"></div>
+	<div class="custom" id="custom">
+		<h1>Sorry For Intruption!!</h1>
+		<p>Our Online Buy Service is Available in <b>Delhi, Mumbai, Chennai ,Bengalore, Gujarat</b> Only.</p>
+		<button id="ok">Ok</button>
+		<button id="cancel">Cancel</button>
+	</div>
+</body>
+
+<script>
+	var myVar;
+	function myFunction() {
+	  myVar = setTimeout(showPage, 2000);
+	}
+	function showPage() {
+	  document.getElementById("loader").style.display = "none";
+	  document.getElementById("custom").style.display = "block";
+	}
+</script>
+</html>

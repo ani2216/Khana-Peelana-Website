@@ -1,0 +1,630 @@
+body{
+	background: url("pics/bg.jpg");
+	background-size: cover;
+}
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  margin: -76px 0 0 -76px;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid rgb(43, 1, 1);
+  border-bottom: 12px solid rgb(43, 1, 1);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#products{
+	text-align: center;
+	color: white;
+	width: 100%;
+	font-size: 30px;
+	height: 40px;
+	background-color: black;
+}
+
+#products:hover{
+	text-decoration: underline;
+}
+
+#anchortag{
+	color: #f1f1f1;
+	position: fixed;
+	width: fit-content;
+	height: fit-content;
+	font-size: 20px;
+	text-orientation: sideways;
+}
+
+
+.prod{
+	display: inline-block;
+	overflow: hidden;
+}
+
+.product{
+	text-align: center;
+	float: left;
+	margin-left: 80px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	border:2px solid lightgrey;
+	border-radius: 20px;
+	width: 300px;
+	height: 540px;
+	display: none;
+	position: relative;
+	overflow: hidden;
+	-webkit-animation-name: product;
+	-webkit-animation-duration: 1s;
+	animation-name: product;
+	animation-duration: 1s
+}
+
+.details{
+	position: absolute;
+	top: -100%;
+	/* left: 0; */
+	background: rgba(0,0,0,0.8);
+	color: #f1f1f1;
+	border-radius: 20px;
+	height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	transition: all 0.5s;
+}
+
+.details input{
+	margin-top: 10px;
+	margin-bottom: 30px;
+	width: 200px;
+	color: #f1f1f1;
+	background: transparent;
+	border: 2px solid rgb(175, 171, 171);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.details input:hover{
+	background: lime;
+	color: black;
+	font-weight: bold;
+}
+
+.details select{
+
+	margin-top: 10px;
+	width: 200px;
+	color: #f1f1f1;
+	background: transparent;
+	border: 2px solid rgb(175, 171, 171);
+	border-radius: 10px;
+}
+
+.details select option{
+	color: black;
+}
+
+.details button{
+	display: none;
+	width: 200px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: #f1f1f1;
+	border: 2px solid rgb(175, 171, 171);
+	margin-top: 15px;
+	cursor: pointer;
+	margin-left: 28px;
+}
+
+.details button:hover{
+	background: lime;
+	color: black;
+	font-weight: bold;
+}
+
+.details #location{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhi{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbai{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennai{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengalore{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujarat{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationd{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhid{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaid{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaid{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengalored{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratd{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationv{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhiv{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaiv{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaiv{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengalorev{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratv{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationdm{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhidm{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaidm{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaidm{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengaloredm{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratdm{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationi{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhii{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaii{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaii{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengalorei{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujarati{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationbs{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhibs{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaibs{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaibs{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengalorebs{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratbs{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationt{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhit{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbait{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennait{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengaloret{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratt{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationdhokla{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhidhokla{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaidhokla{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaidhokla{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengaloredhokla{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratdhokla{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #locationu{
+	display: none;
+	margin-left: 28px;
+}
+
+.details #Delhiu{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Mumbaiu{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Chennaiu{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Bengaloreu{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.details #Gujaratu{
+	display: none;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+
+.product:hover .details{
+	top: 0px;
+}
+
+@-webkit-keyframes product {
+  from { bottom:-100%; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes product { 
+  from{ bottom:-100%; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+.product h3{
+	
+	text-decoration: underline;
+	margin-top: 1px;
+	font-size: 30px;
+	color: white;
+}
+
+#para{
+	text-align: left;
+	font: bolder;
+	cursor: pointer;
+	color: white;
+}
+
+.checked{
+	color: orange;
+}
+
+.unchecked{
+	color:white
+}
+
+#para1{
+	color: blanchedalmond;
+	font-size: 20px;
+}
+
+.product img{
+	border-radius: 20px;
+	margin-bottom: 1px;
+	
+}
+
+#myBtn{
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.btn.active{
+	color: white;
+	background-color: limegreen;
+	border: 2px solid black;
+}
+
+.btn{
+	color: black;
+	padding-right: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	margin-right: 5px;
+	border: none;
+}
+
+.btn:hover{
+	text-decoration: underline;
+}
+
+.show{
+	display: block;
+}
+
+footer{
+	text-align: center;
+	width: 100%;
+	height: fit-content;
+	background: transparent;
+	color: white;
+	background-color: black;
+	font-size: bolder;
+}
+
+#loader{
+	background:url("pics/foodicon.jpg");
+	background-size: cover;
+	background-color: transparent;
+}
+
+#custom{
+	width: 700px;
+	height: 300px;
+	margin-top: 100px;
+	margin-left: 300px;
+	background: white;
+	border: 2px solid black;
+	box-shadow: 10px 10px 10px black;
+}
+
+#custom h1{
+	text-decoration: underline;
+	text-align: center;
+}
+
+#custom button{
+	margin-top: 50px;
+	margin-left: 200px;
+	width: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: rgb(92, 86, 86);
+	background: rgb(235, 230, 230);
+	box-shadow: 3px 3px 3px black;
+	cursor: pointer;
+}
+
+#custom #cancel{
+	margin-left: 10px;
+}
+
+#custom button:hover{
+	background: black;
+	color: #f1f1f1;
+}
+
+#back{
+	display: none; 
+	background:rgb(180, 178, 178,0.5);
+
+}
+
+#backd{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backv{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backdm{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backi{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backbs{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backt{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backdhokla{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}
+
+#backu{
+	display: none;
+	background: rgb(180, 178, 178,0.5);
+}

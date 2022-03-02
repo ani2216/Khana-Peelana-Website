@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <script src="index.js" type="text/javascript"></script> -->
+</head>
+<body onload="myFunction()" style="margin: 0px;">
+	<div id="loader"></div>
+
+	<div id="customize" style="display: none;">
+	<div id="custom">
+		<h1>Sorry For Intruption!!</h1>
+		<p>Our Online Buy Service is Available in <b>Delhi, Mumbai, Chennai ,Bengalore, Gujarat</b> Only.</p>
+		<button id="ok">Ok</button>
+		<button id="cancel">Cancel</button>
+	</div>
+	</div>
+	<div id="powered" style="display: none;  text-align: center; margin-top: 200px; font-size: 40px;">
+		<h2 style="text-decoration: underline;">Khana-Peelana Corner Partnership with Zomato</h2>
+		<p>Powered by- <b>Zomato</b></p>
+	</div>
+   <div class="animate-bottom" id="myDiv" style="display: none;">
+	<header id="products">
+			Our Products And Reviews
+	</header>
+
+	<div id="myBtn">
+	<button class="btn active" onclick="filterSelection('all')"><b>Show all</b></button>
+	<button class="btn" onclick="filterSelection('North-Indian')"><b>North-Indian</b></button>
+	<button class="btn" onclick="filterSelection('South-Indian')"><b>South-Indian</b></button>
+	<button class="btn" onclick="filterSelection('West')"><b>West-Side</b></button>
+	<button class="btn" onclick="filterSelection('East')"><b>East-Side</b></button>
+	<button class="btn" onclick="filterSelection('Thali')"><b>Thali</b></button>
+	<button class="btn" onclick="filterSelection('Snacks')"><b>Snacks</b></button>
+	<button class="btn" onclick="filterSelection('Drinks')"><b>Drinks</b></button>
+	<p style="color: #f1f1f1; text-decoration: underline;">Powered by- <b>Zomato</b></p>
+	</div>
+
+	<div class="prod" id="prod">
+
+		<div class="product North-Indian Snacks">
+			<img src="pics\chole.jpg" width="300px" height="200px">	
+			<h3>Chole bhature</h3>	
+			<p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>(218)</p>
+		     <p id="para1">Chole bhature is a food dish popular in the Northern areas of the Indian subcontinent. It is a combination of chana masala (spicy white chickpeas) and bhatura/puri, a fried bread made from maida.Chole bhature is often eaten as a breakfast dish, sometimes accompanied with lassi.</p>
+		         <div class="details">
+				 <h3>About Chole Bhature</h3>
+				 <p>Chole bhature is a food dish popular in the Northern areas of the Indian subcontinent...<a href="https://en.wikipedia.org/wiki/Chole_bhature" target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews" onclick="clickreview1()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visit" onclick="clickvisit()">
+				 <br>
+				 <input type="button" value="Buy" id="buy" onclick="clickbuy()">
+				 <div id="back">
+				 <p id="selectlocation" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="location" onchange="cityselection()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhi" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbai" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennai" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengalore" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujarat" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmit" onclick="redirect()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+		<div class="product South-Indian">
+		     <img src="pics\dosa.jpg" width="300px" height="200px">
+                     <h3>Dosa</h3>	
+		     <p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>
+			<span class="fa fa-star unchecked"></span>(117)</p>
+		     <p id="para1">A dosa (also dosai or dosha) is a thin pancake or crepe, originating from South India,made from a fermented batter predominantly consisting of lentils and rice.Its main ingredients are rice and black gram, ground together in a fine,smooth batter with a dash of salt, then fermented.</p>
+		     <div class="details">
+				 <h3>About Dosa</h3>
+				 <p>Chole bhature is a food dish popular in the Northern areas of the Indian subcontinent...<a href="https://en.wikipedia.org/wiki/Dosa#:~:text=A%20dosa%20(also%20dosai%20or,consisting%20of%20lentils%20and%20rice.&text=Its%20main%20ingredients%20are%20rice,dash%20of%20salt%2C%20then%20fermented." target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews1" onclick="clickreview2()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitd" onclick="clickvisits()">
+				 <br>
+				 <input type="button" value="Buy" id="buyd" onclick="clickbuys()">
+				 <div id="backd">
+				 <p id="selectlocationd" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationd" onchange="cityselectiond()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhid" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaid" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaid" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengalored" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratd" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitd" onclick="redirect1()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+		<div class="product Drinks">
+		     <img src="pics\virginmojito.jpg" width="300px" height="200px">
+                     <h3>Virgin Mojito</h3>
+		     <p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>(167)</p>
+		     <p id="para1">Virgin Mojito is a classic and refreshing non-alcoholic drink made from mint leaves, lemon juice and sweetened to taste.</p>	
+		     <div class="details">
+				 <h3>About Mojito</h3>
+				 <p>Virgin Mojito is a classic and refreshing non-alcoholic drink made from mint leaves...<a href="https://en.wikipedia.org/wiki/Mojito#:~:text=A%20Mojito%20without%20alcohol%20is,Side%20Fizz%20adds%20seltzer%20water." target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews2" onclick="clickreview3()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitv" onclick="visitv()">
+				 <br>
+				 <input type="button" value="Buy" id="buyv" onclick="buyv()">
+				   <div id="backv">
+				 <p id="selectlocationv" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationv" onchange="cityselectionv()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhiv" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaiv" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaiv" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengalorev" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratv" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitv" onclick="redirect2()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+
+		<div class="product North-Indian">
+			<img src="pics\dalmakhani.jpg" width="300px" height="200px">	
+			<h3>Dal Makhani</h3>	
+			<p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>(218)</p>
+		     <p id="para1">Dal makhani is made using black lentils and red kidney beans that have been soaked overnight.These are mixed with tomato puree, a selection of herbs and spices that include garam masala, sabzi masala, ginger-garlic paste, and a large amount of butter. The mix is left to cook overnight on a tandoor so the dal can get a distinct smoky flavor.</p>
+		     <div class="details">
+				 <h3>About Dal Makhani</h3>
+				 <p>Dal makhani is made using black lentils and red kidney beans that have been soaked overnight...<a href="https://en.wikipedia.org/wiki/Dal_makhani" target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews3" onclick="clickreview4()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitdm" onclick="visitdm()">
+				 <br>
+				 <input type="button" value="Buy" id="buydm" onclick="buydm()">
+				  <div id="backdm">
+				 <p id="selectlocationdm" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationdm" onchange="cityselectiondm()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhidm" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaidm" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaidm" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengaloredm" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratdm" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitdm" onclick="redirect3()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+		<div class="product South-Indian">
+		     <img src="pics\idli.jpg" width="300px" height="200px">
+                     <h3>Idli</h3>	
+		     <p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>
+			<span class="fa fa-star unchecked"></span>(117)</p>
+		     <p id="para1">Idli is a soft & fluffy steamed cake made of fermented rice & lentil batter. These are one of the healthiest protein packed Breakfasts from South Indian cuisine. Idli are easily digestible as the rice & lentils known as DAL are soaked, ground, fermented & then prepared by steaming the batter.</p>	
+		     <div class="details">
+				 <h3>About Idli</h3>
+				 <p>Idli is a soft & fluffy steamed cake made of fermented rice & lentil batter....<a href="https://en.wikipedia.org/wiki/Idli" target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews4" onclick="clickreview5()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visiti" onclick="visiti()">
+				 <br>
+				 <input type="button" value="Buy" id="buyi" onclick="buyi()">
+				   <div id="backi">
+				 <p id="selectlocationi" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationi" onchange="cityselectioni()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhii" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaii" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaii" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengalorei" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujarati" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmiti" onclick="redirect4()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+		<div class="product Drinks">
+		     <img src="pics\blueshoe.jpg" width="300px" height="200px">
+                     <h3>Blue Shoe</h3>
+		     <p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>(167)</p>
+
+			<p id="para1">The Blue Shoe is a non-alcoholic "mocktail" I created so non-drinkers could enjoy a blue, bubbly cocktail. It features the flavors of berry, cranberry and lemon-lime.</p>	
+		     <div class="details">
+				 <h3>About Blue Shoe</h3>
+				 <p>The Blue Shoe is a non-alcoholic "mocktail" I created so non-drinkers could...<a href="https://en.wikipedia.org/wiki/Non-alcoholic_drink" target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews5" onclick="clickreview6()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitbs" onclick="visitbs()">
+				 <br>
+				 <input type="button" value="Buy" id="buybs" onclick="buybs()">
+				 <div id="backbs">
+				 <p id="selectlocationbs" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationbs" onchange="cityselectionbs()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhibs" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaibs" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaibs" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengalorebs" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratbs" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitbs" onclick="redirect5()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+
+		<div class="product North-Indian Thali">
+			<img src="pics\northThali.jpg" width="300px" height="200px">	
+			<h3>Thali</h3>	
+			<p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>(218)</p>
+		     <p id="para1">A North Indian Thali is a delicious platter in which various dishes of a typical North Indian style meal are served together on a metal plate (thali). It is a complete meal in itself that serves all the nutrients required for a balanced diet.</p>
+		     <div class="details">
+				 <h3>About Thali</h3>
+				 <p>A North Indian Thali is a delicious platter in which various dishes of a typical ...<a href="https://en.wikipedia.org/wiki/Thali#:~:text=Thali%20is%20popular%20in%20Punjab,chemesthesis%20rather%20than%20true%20flavours)." target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews6" onclick="clickreview7()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitt" onclick="visitt()">
+				 <br>
+				 <input type="button" value="Buy" id="buyt" onclick="buyt()">
+				   <div id="backt">
+				 <p id="selectlocationt" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationt" onchange="cityselectiont()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhit" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbait" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennait" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengaloret" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratt" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitt" onclick="redirect6()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+		<div class="product West Snacks">
+		     <img src="pics\dhokla.jpg" width="300px" height="200px">
+                     <h3>Dhokla</h3>	
+		     <p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>
+			<span class="fa fa-star unchecked"></span>(117)</p>
+		     <p id="para1">Dhokla is a vegetarian culinary dish that is found mainly in the Indian state of Gujarat and parts of adjacent states. It is made with a fermented batter derived from rice, ground urad dal, and chickpea flour. Dhokla can be eaten for breakfast, as a main course, as a side dish, or as a snack.</p>	
+		     <div class="details">
+				 <h3>About Dhokla</h3>
+				 <p>Dhokla is a vegetarian culinary dish that is found mainly in the Indian state of Gujarat...<a href="https://en.wikipedia.org/wiki/Dhokla" target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews7" onclick="clickreview8()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitdhokla" onclick="visitdhokla()">
+				 <br>
+				 <input type="button" value="Buy" id="buydhokla" onclick="buydhokla()">
+				   <div id="backdhokla">
+				 <p id="selectlocationdhokla" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationdhokla" onchange="cityselectiondhokla()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhidhokla" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaidhokla" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaidhokla" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengaloredhokla" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratdhokla" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitdhokla" onclick="redirect7()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+		<div class="product East Snacks">
+		     <img src="pics\umbar.jpg" width="300px" height="200px">
+                     <h3>Umbar</h3>
+		     <p id="para"><b>Rating:</b><span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star unchecked"></span>(167)</p>
+		     <p id="para1">Umbar is a classic East-Indian snack made to serve with tea and very popular during the wedding celebrations. Traditionally made with wheat flour and sesame seeds these are deep-fried and delicious. The process for making the dough (khoy) for these is very similar to making rice Rotis</p>	
+		     <div class="details">
+				 <h3>About Umbar</h3>
+				 <p>Umbar is a classic East-Indian snack made to serve with tea and very popular...<a href="https://eastindianrecipes.net/east-indian-umbar/#:~:text=It%20needs%20a%20bit%20of,a%20fun%20bread%20to%20make.&text=This%20mince%20kheema%20curry%20uses,ground%20pork%20for%20this%20recipe." target="_blank" target="_blank">Read-More</a></p>
+				 <input type="button" value="Reviews" id="Reviews8" onclick="clickreview9()">
+				<br>
+				 <input type="button" value="Best-Place To Visit" id="visitu" onclick="visitu()">
+				 <br>
+				 <input type="button" value="Buy" id="buyu" onclick="buyu()">
+				   <div id="backu">
+				 <p id="selectlocationu" style="display: none; text-decoration: underline; color: #f1f1f1; margin-top: -10px;">Select Location</p>
+				 <select name="location" id="locationu" onchange="cityselectionu()" required> 
+					 <option value="Select" selected disabled>Select</option>
+					 <option value="Delhi">Delhi</option>
+					 <option value="Mumbai">Mumbai</option>
+					 <option value="Chennai">Chennai</option>
+					 <option value="Bengalore">Bengalore</option>
+					 <option value="Gujarat">Gujarat</option>
+				 </select>
+				 <select name="loaction1" id="Delhiu" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="cp">Connaught Place</option>
+					 <option value="rg">Rajouri Garden</option>
+					 <option value="pb">Punjabi Bagh</option>
+					 <option value="hk">Haus Khaz</option>
+					 <option value="pg">PaharGanj</option>
+				 </select>
+
+				 <select name="loaction1" id="Mumbaiu" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="sant">Santacruz</option>
+					 <option value="vv">VidyaVihar</option>
+					 <option value="ghat">GhatKopar</option>
+					 <option value="rt">RTO Colony</option>
+					 <option value="pn">Pant-Nagar</option>
+				 </select>
+
+				  <select name="loaction1" id="Chennaiu" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Anna-Nagar">Anna-Nagar</option>
+					 <option value="Chetpet">Chetpet</option>
+					 <option value="Egmore">Egmore</option>
+					 <option value="Perambur">Perambur</option>
+					 <option value="Thousand-Light">Thousand-Light</option>
+				 </select>
+
+				  <select name="loaction1" id="Bengaloreu" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="CommercialStreet">CommercialStreet</option>
+					 <option value="IndiraNagar">IndiraNagar</option>
+					 <option value="Koramangala">Koramangala</option>
+					 <option value="Ejipura">Ejipura</option>
+					 <option value="Race-Course-Road">Race-Course-Road</option>
+				 </select>
+
+				  <select name="loaction1" id="Gujaratu" required>
+					 <option value="select" selected disabled>Select</option>
+					 <option value="Navrangpura">Navrangpura</option>
+					 <option value="Paldi">Paldi</option>
+					 <option value="Naranpura">Naranpura</option>
+					 <option value="CG-Road">CG-Road</option>
+					 <option value="Bopal">Bopal</option>
+				 </select>
+				 <button id="citysubmitu" onclick="redirect8()">Buy</button>
+				 </div>
+			 </div>
+		</div>
+	</div>
+	<a href="frontPage.php" style="color: #f1f1f1;
+	width: fit-content;
+	height: fit-content;
+	font-size: 20px;
+	margin-left: 1220px;">HOME-PAGE</a>
+	<footer>Privacy Policy | Terms of Service Copyright &#169; Khana-Peelana Corner. All Rights Reserved</footer>
+	</div>
+</body>
+<script>
+	function clickbuy(){
+		document.getElementById("buy").style.display = "none";
+		document.getElementById("back").style.display = "block";
+		document.getElementById("location").style.display = "block";
+		document.getElementById("selectlocation").style.display = "block";
+		document.getElementById("citysubmit").innerHTML = "Buy";
+	}
+
+	function clickbuys(){
+		document.getElementById("buyd").style.display = "none";
+		document.getElementById("backd").style.display = "block";
+		document.getElementById("locationd").style.display = "block";
+		document.getElementById("selectlocationd").style.display = "block";
+		document.getElementById("citysubmitd").innerHTML = "Buy";
+	}
+
+	function buyv(){
+		document.getElementById("buyv").style.display = "none";
+		document.getElementById("backv").style.display = "block";
+		document.getElementById("locationv").style.display = "block";
+		document.getElementById("selectlocationv").style.display = "block";
+		document.getElementById("citysubmitv").innerHTML = "Buy";
+	}
+
+	function buydm(){
+		document.getElementById("buydm").style.display = "none";
+		document.getElementById("backdm").style.display = "block";
+		document.getElementById("locationdm").style.display = "block";
+		document.getElementById("selectlocationdm").style.display = "block";
+		document.getElementById("citysubmitdm").innerHTML = "Buy";
+	}
+
+	function clickbuy(){
+		document.getElementById("buy").style.display = "none";
+		document.getElementById("back").style.display = "block";
+		document.getElementById("location").style.display = "block";
+		document.getElementById("selectlocation").style.display = "block";
+		document.getElementById("citysubmit").innerHTML = "Buy";
+	}
+
+	function clickbuys(){
+		document.getElementById("buyd").style.display = "none";
+		document.getElementById("backd").style.display = "block";
+		document.getElementById("locationd").style.display = "block";
+		document.getElementById("selectlocationd").style.display = "block";
+		document.getElementById("citysubmitd").innerHTML = "Buy";
+	}
+
+	function buyi(){
+		document.getElementById("buyi").style.display = "none";
+		document.getElementById("backi").style.display = "block";
+		document.getElementById("locationi").style.display = "block";
+		document.getElementById("selectlocationi").style.display = "block";
+		document.getElementById("citysubmiti").innerHTML = "Buy";
+	}
+
+	function buybs(){
+		document.getElementById("buybs").style.display = "none";
+		document.getElementById("backbs").style.display = "block";
+		document.getElementById("locationbs").style.display = "block";
+		document.getElementById("selectlocationbs").style.display = "block";
+		document.getElementById("citysubmitbs").innerHTML = "Buy";
+	}
+
+	function buyt(){
+		document.getElementById("buyt").style.display = "none";
+		document.getElementById("backt").style.display = "block";
+		document.getElementById("locationt").style.display = "block";
+		document.getElementById("selectlocationt").style.display = "block";
+		document.getElementById("citysubmitt").innerHTML = "Buy";
+	}
+
+	function buydhokla(){
+		document.getElementById("buydhokla").style.display = "none";
+		document.getElementById("backdhokla").style.display = "block";
+		document.getElementById("locationdhokla").style.display = "block";
+		document.getElementById("selectlocationdhokla").style.display = "block";
+		document.getElementById("citysubmitdhokla").innerHTML = "Buy";
+	}
+
+	function buyu(){
+		document.getElementById("buyu").style.display = "none";
+		document.getElementById("backu").style.display = "block";
+		document.getElementById("locationu").style.display = "block";
+		document.getElementById("selectlocationu").style.display = "block";
+		document.getElementById("citysubmitu").innerHTML = "Buy";
+	}
+
+	function clickvisit(){
+		document.getElementById("buy").style.display = "block";
+		document.getElementById("buy").style.marginLeft = "30px";
+		document.getElementById("back").style.display = "block";
+		document.getElementById("location").style.display = "block";
+		document.getElementById("selectlocation").style.display = "block";
+		document.getElementById("citysubmit").innerHTML = "Search";
+	}
+
+	function clickvisits(){
+		document.getElementById("buyd").style.display = "block";
+		document.getElementById("buyd").style.marginLeft = "30px";
+		document.getElementById("backd").style.display = "block";
+		document.getElementById("locationd").style.display = "block";
+		document.getElementById("selectlocationd").style.display = "block";
+		document.getElementById("citysubmitd").innerHTML = "Search";
+	}
+
+	
+	function visitv(){
+		document.getElementById("buyv").style.display = "block";
+		document.getElementById("buyv").style.marginLeft = "30px";
+		document.getElementById("backv").style.display = "block";
+		document.getElementById("locationv").style.display = "block";
+		document.getElementById("selectlocationv").style.display = "block";
+		document.getElementById("citysubmitv").innerHTML = "Search";
+	}
+
+	function visitdm(){
+		document.getElementById("buydm").style.display = "block";
+		document.getElementById("buydm").style.marginLeft = "30px";
+		document.getElementById("backdm").style.display = "block";
+		document.getElementById("locationdm").style.display = "block";
+		document.getElementById("selectlocationdm").style.display = "block";
+		document.getElementById("citysubmitdm").innerHTML = "Search";
+	}
+
+	function visiti(){
+		document.getElementById("buyi").style.display = "block";
+		document.getElementById("buyi").style.marginLeft = "30px";
+		document.getElementById("backi").style.display = "block";
+		document.getElementById("locationi").style.display = "block";
+		document.getElementById("selectlocationi").style.display = "block";
+		document.getElementById("citysubmiti").innerHTML = "Search";
+	}
+
+	function visitbs(){
+		document.getElementById("buybs").style.display = "block";
+		document.getElementById("buybs").style.marginLeft = "30px";
+		document.getElementById("backbs").style.display = "block";
+		document.getElementById("locationbs").style.display = "block";
+		document.getElementById("selectlocationbs").style.display = "block";
+		document.getElementById("citysubmitbs").innerHTML = "Search";
+	}
+
+	function visitt(){
+		document.getElementById("buyt").style.display = "block";
+		document.getElementById("buyt").style.marginLeft = "30px";
+		document.getElementById("backt").style.display = "block";
+		document.getElementById("locationt").style.display = "block";
+		document.getElementById("selectlocationt").style.display = "block";
+		document.getElementById("citysubmitt").innerHTML = "Search";
+	}
+
+	function visitdhokla(){
+		document.getElementById("buydhokla").style.display = "block";
+		document.getElementById("buydhokla").style.marginLeft = "30px";
+		document.getElementById("backdhokla").style.display = "block";
+		document.getElementById("locationdhokla").style.display = "block";
+		document.getElementById("selectlocationdhokla").style.display = "block";
+		document.getElementById("citysubmitdhokla").innerHTML = "Search";
+	}
+
+	function visitu(){
+		document.getElementById("buyu").style.display = "block";
+		document.getElementById("buyu").style.marginLeft = "30px";
+		document.getElementById("backu").style.display = "block";
+		document.getElementById("locationu").style.display = "block";
+		document.getElementById("selectlocationu").style.display = "block";
+		document.getElementById("citysubmitu").innerHTML = "Search";
+	}
+
+	var s = document.getElementById("location");
+	var s1 = document.getElementById("locationd");
+	var s2 = document.getElementById("locationv");
+	var s3 = document.getElementById("locationdm");
+	var s4 = document.getElementById("locationi");
+	var s5 = document.getElementById("locationbs");
+	var s6 = document.getElementById("locationt");
+	var s7 = document.getElementById("locationdhokla");
+	var s8 = document.getElementById("locationu");
+	function cityselection(){
+		document.getElementById("citysubmit").style.display = "block";
+		if(s.value == "Delhi")
+		{
+			document.getElementById("Delhi").style.display = "block";
+			document.getElementById("Mumbai").style.display = "none";
+			document.getElementById("Chennai").style.display = "none";
+			document.getElementById("Bengalore").style.display = "none";
+			document.getElementById("Gujarat").style.display = "none";
+		}
+		else if(s.value == "Mumbai"){
+			document.getElementById("Mumbai").style.display = "block";
+			document.getElementById("Delhi").style.display = "none";
+			document.getElementById("Chennai").style.display = "none";
+			document.getElementById("Bengalore").style.display = "none";
+			document.getElementById("Gujarat").style.display = "none";
+		} else if(s.value == "Chennai"){
+			document.getElementById("Chennai").style.display = "block";
+			document.getElementById("Delhi").style.display = "none";
+			document.getElementById("Mumbai").style.display = "none";
+			document.getElementById("Bengalore").style.display = "none";
+			document.getElementById("Gujarat").style.display = "none";
+		} else if(s.value == "Bengalore"){
+			document.getElementById("Bengalore").style.display = "block";
+			document.getElementById("Chennai").style.display = "none";
+			document.getElementById("Delhi").style.display = "none";
+			document.getElementById("Mumbai").style.display = "none";
+			document.getElementById("Gujarat").style.display = "none";
+		} else if(s.value == "Gujarat"){
+			document.getElementById("Gujarat").style.display = "block";
+			document.getElementById("Chennai").style.display = "none";
+			document.getElementById("Delhi").style.display = "none";
+			document.getElementById("Mumbai").style.display = "none";
+			document.getElementById("Bengalore").style.display = "none";
+		}
+	}
+
+	function cityselectiond(){
+		document.getElementById("citysubmitd").style.display = "block";
+		if(s1.value == "Delhi")
+		{
+			document.getElementById("Delhid").style.display = "block";
+			document.getElementById("Mumbaid").style.display = "none";
+			document.getElementById("Chennaid").style.display = "none";
+			document.getElementById("Bengalored").style.display = "none";
+			document.getElementById("Gujaratd").style.display = "none";
+		}
+		else if(s1.value == "Mumbai"){
+			document.getElementById("Mumbaid").style.display = "block";
+			document.getElementById("Delhid").style.display = "none";
+			document.getElementById("Chennaid").style.display = "none";
+			document.getElementById("Bengalored").style.display = "none";
+			document.getElementById("Gujaratd").style.display = "none";
+		} else if(s1.value == "Chennai"){
+			document.getElementById("Chennaid").style.display = "block";
+			document.getElementById("Delhid").style.display = "none";
+			document.getElementById("Mumbaid").style.display = "none";
+			document.getElementById("Bengalored").style.display = "none";
+			document.getElementById("Gujaratd").style.display = "none";
+		} else if(s1.value == "Bengalore"){
+			document.getElementById("Bengalored").style.display = "block";
+			document.getElementById("Chennaid").style.display = "none";
+			document.getElementById("Delhid").style.display = "none";
+			document.getElementById("Mumbaid").style.display = "none";
+			document.getElementById("Gujaratd").style.display = "none";
+		} else if(s1.value == "Gujarat"){
+			document.getElementById("Gujaratd").style.display = "block";
+			document.getElementById("Chennaid").style.display = "none";
+			document.getElementById("Delhid").style.display = "none";
+			document.getElementById("Mumbaid").style.display = "none";
+			document.getElementById("Bengalored").style.display = "none";
+		}
+	}
+
+	function cityselectionv(){
+		document.getElementById("citysubmitv").style.display = "block";
+		if(s2.value == "Delhi")
+		{
+			document.getElementById("Delhiv").style.display = "block";
+			document.getElementById("Mumbaiv").style.display = "none";
+			document.getElementById("Chennaiv").style.display = "none";
+			document.getElementById("Bengalorev").style.display = "none";
+			document.getElementById("Gujaratv").style.display = "none";
+		}
+		else if(s2.value == "Mumbai"){
+			document.getElementById("Mumbaiv").style.display = "block";
+			document.getElementById("Delhiv").style.display = "none";
+			document.getElementById("Chennaiv").style.display = "none";
+			document.getElementById("Bengalorev").style.display = "none";
+			document.getElementById("Gujaratv").style.display = "none";
+		} else if(s2.value == "Chennai"){
+			document.getElementById("Chennaiv").style.display = "block";
+			document.getElementById("Delhiv").style.display = "none";
+			document.getElementById("Mumbaiv").style.display = "none";
+			document.getElementById("Bengalorev").style.display = "none";
+			document.getElementById("Gujaratv").style.display = "none";
+		} else if(s2.value == "Bengalore"){
+			document.getElementById("Bengalorev").style.display = "block";
+			document.getElementById("Chennaiv").style.display = "none";
+			document.getElementById("Delhiv").style.display = "none";
+			document.getElementById("Mumbaiv").style.display = "none";
+			document.getElementById("Gujaratv").style.display = "none";
+		} else if(s2.value == "Gujarat"){
+			document.getElementById("Gujaratv").style.display = "block";
+			document.getElementById("Chennaiv").style.display = "none";
+			document.getElementById("Delhiv").style.display = "none";
+			document.getElementById("Mumbaiv").style.display = "none";
+			document.getElementById("Bengalorev").style.display = "none";
+		}
+	}
+
+	function cityselectiondm(){
+		document.getElementById("citysubmitdm").style.display = "block";
+		if(s3.value == "Delhi")
+		{
+			document.getElementById("Delhidm").style.display = "block";
+			document.getElementById("Mumbaidm").style.display = "none";
+			document.getElementById("Chennaidm").style.display = "none";
+			document.getElementById("Bengaloredm").style.display = "none";
+			document.getElementById("Gujaratdm").style.display = "none";
+		}
+		else if(s3.value == "Mumbai"){
+			document.getElementById("Mumbaidm").style.display = "block";
+			document.getElementById("Delhidm").style.display = "none";
+			document.getElementById("Chennaidm").style.display = "none";
+			document.getElementById("Bengaloredm").style.display = "none";
+			document.getElementById("Gujaratdm").style.display = "none";
+		} else if(s3.value == "Chennai"){
+			document.getElementById("Chennaidm").style.display = "block";
+			document.getElementById("Delhidm").style.display = "none";
+			document.getElementById("Mumbaidm").style.display = "none";
+			document.getElementById("Bengaloredm").style.display = "none";
+			document.getElementById("Gujaratdm").style.display = "none";
+		} else if(s3.value == "Bengalore"){
+			document.getElementById("Bengaloredm").style.display = "block";
+			document.getElementById("Chennaidm").style.display = "none";
+			document.getElementById("Delhidm").style.display = "none";
+			document.getElementById("Mumbaidm").style.display = "none";
+			document.getElementById("Gujaratdm").style.display = "none";
+		} else if(s3.value == "Gujarat"){
+			document.getElementById("Gujaratdm").style.display = "block";
+			document.getElementById("Chennaidm").style.display = "none";
+			document.getElementById("Delhidm").style.display = "none";
+			document.getElementById("Mumbaidm").style.display = "none";
+			document.getElementById("Bengaloredm").style.display = "none";
+		}
+	}
+
+	function cityselectioni(){
+		document.getElementById("citysubmiti").style.display = "block";
+		if(s4.value == "Delhi")
+		{
+			document.getElementById("Delhii").style.display = "block";
+			document.getElementById("Mumbaii").style.display = "none";
+			document.getElementById("Chennaii").style.display = "none";
+			document.getElementById("Bengalorei").style.display = "none";
+			document.getElementById("Gujarati").style.display = "none";
+		}
+		else if(s4.value == "Mumbai"){
+			document.getElementById("Mumbaii").style.display = "block";
+			document.getElementById("Delhii").style.display = "none";
+			document.getElementById("Chennaii").style.display = "none";
+			document.getElementById("Bengalorei").style.display = "none";
+			document.getElementById("Gujarati").style.display = "none";
+		} else if(s4.value == "Chennai"){
+			document.getElementById("Chennaii").style.display = "block";
+			document.getElementById("Delhii").style.display = "none";
+			document.getElementById("Mumbaii").style.display = "none";
+			document.getElementById("Bengalorei").style.display = "none";
+			document.getElementById("Gujarati").style.display = "none";
+		} else if(s4.value == "Bengalore"){
+			document.getElementById("Bengalorei").style.display = "block";
+			document.getElementById("Chennaii").style.display = "none";
+			document.getElementById("Delhii").style.display = "none";
+			document.getElementById("Mumbaii").style.display = "none";
+			document.getElementById("Gujarati").style.display = "none";
+		} else if(s4.value == "Gujarat"){
+			document.getElementById("Gujarati").style.display = "block";
+			document.getElementById("Chennaii").style.display = "none";
+			document.getElementById("Delhii").style.display = "none";
+			document.getElementById("Mumbaii").style.display = "none";
+			document.getElementById("Bengalorei").style.display = "none";
+		}
+	}
+
+	function cityselectionbs(){
+		document.getElementById("citysubmitbs").style.display = "block";
+		if(s5.value == "Delhi")
+		{
+			document.getElementById("Delhibs").style.display = "block";
+			document.getElementById("Mumbaibs").style.display = "none";
+			document.getElementById("Chennaibs").style.display = "none";
+			document.getElementById("Bengalorebs").style.display = "none";
+			document.getElementById("Gujaratbs").style.display = "none";
+		}
+		else if(s5.value == "Mumbai"){
+			document.getElementById("Mumbaibs").style.display = "block";
+			document.getElementById("Delhibs").style.display = "none";
+			document.getElementById("Chennaibs").style.display = "none";
+			document.getElementById("Bengalorebs").style.display = "none";
+			document.getElementById("Gujaratbs").style.display = "none";
+		} else if(s5.value == "Chennai"){
+			document.getElementById("Chennaibs").style.display = "block";
+			document.getElementById("Delhibs").style.display = "none";
+			document.getElementById("Mumbaibs").style.display = "none";
+			document.getElementById("Bengalorebs").style.display = "none";
+			document.getElementById("Gujaratbs").style.display = "none";
+		} else if(s5.value == "Bengalore"){
+			document.getElementById("Bengalorebs").style.display = "block";
+			document.getElementById("Chennaibs").style.display = "none";
+			document.getElementById("Delhibs").style.display = "none";
+			document.getElementById("Mumbaibs").style.display = "none";
+			document.getElementById("Gujaratbs").style.display = "none";
+		} else if(s5.value == "Gujarat"){
+			document.getElementById("Gujaratbs").style.display = "block";
+			document.getElementById("Chennaibs").style.display = "none";
+			document.getElementById("Delhibs").style.display = "none";
+			document.getElementById("Mumbaibs").style.display = "none";
+			document.getElementById("Bengalorebs").style.display = "none";
+		}
+	}
+
+	function cityselectiont(){
+		document.getElementById("citysubmitt").style.display = "block";
+		if(s6.value == "Delhi")
+		{
+			document.getElementById("Delhit").style.display = "block";
+			document.getElementById("Mumbait").style.display = "none";
+			document.getElementById("Chennait").style.display = "none";
+			document.getElementById("Bengaloret").style.display = "none";
+			document.getElementById("Gujaratt").style.display = "none";
+		}
+		else if(s6.value == "Mumbai"){
+			document.getElementById("Mumbait").style.display = "block";
+			document.getElementById("Delhit").style.display = "none";
+			document.getElementById("Chennait").style.display = "none";
+			document.getElementById("Bengaloret").style.display = "none";
+			document.getElementById("Gujaratt").style.display = "none";
+		} else if(s6.value == "Chennai"){
+			document.getElementById("Chennait").style.display = "block";
+			document.getElementById("Delhit").style.display = "none";
+			document.getElementById("Mumbait").style.display = "none";
+			document.getElementById("Bengaloret").style.display = "none";
+			document.getElementById("Gujaratt").style.display = "none";
+		} else if(s6.value == "Bengalore"){
+			document.getElementById("Bengaloret").style.display = "block";
+			document.getElementById("Chennait").style.display = "none";
+			document.getElementById("Delhit").style.display = "none";
+			document.getElementById("Mumbait").style.display = "none";
+			document.getElementById("Gujaratt").style.display = "none";
+		} else if(s6.value == "Gujarat"){
+			document.getElementById("Gujaratt").style.display = "block";
+			document.getElementById("Chennait").style.display = "none";
+			document.getElementById("Delhit").style.display = "none";
+			document.getElementById("Mumbait").style.display = "none";
+			document.getElementById("Bengaloret").style.display = "none";
+		}
+	}
+
+	function cityselectiondhokla(){
+		document.getElementById("citysubmitdhokla").style.display = "block";
+		if(s7.value == "Delhi")
+		{
+			document.getElementById("Delhidhokla").style.display = "block";
+			document.getElementById("Mumbaidhokla").style.display = "none";
+			document.getElementById("Chennaidhokla").style.display = "none";
+			document.getElementById("Bengaloredhokla").style.display = "none";
+			document.getElementById("Gujaratdhokla").style.display = "none";
+		}
+		else if(s7.value == "Mumbai"){
+			document.getElementById("Mumbaidhokla").style.display = "block";
+			document.getElementById("Delhidhokla").style.display = "none";
+			document.getElementById("Chennaidhokla").style.display = "none";
+			document.getElementById("Bengaloredhokla").style.display = "none";
+			document.getElementById("Gujaratdhokla").style.display = "none";
+		} else if(s7.value == "Chennai"){
+			document.getElementById("Chennaidhokla").style.display = "block";
+			document.getElementById("Delhidhokla").style.display = "none";
+			document.getElementById("Mumbaidhokla").style.display = "none";
+			document.getElementById("Bengaloredhokla").style.display = "none";
+			document.getElementById("Gujaratdhokla").style.display = "none";
+		} else if(s7.value == "Bengalore"){
+			document.getElementById("Bengaloredhokla").style.display = "block";
+			document.getElementById("Chennaidhokla").style.display = "none";
+			document.getElementById("Delhidhokla").style.display = "none";
+			document.getElementById("Mumbaidhokla").style.display = "none";
+			document.getElementById("Gujaratdhokla").style.display = "none";
+		} else if(s7.value == "Gujarat"){
+			document.getElementById("Gujaratdhokla").style.display = "block";
+			document.getElementById("Chennaidhokla").style.display = "none";
+			document.getElementById("Delhidhokla").style.display = "none";
+			document.getElementById("Mumbaidhokla").style.display = "none";
+			document.getElementById("Bengaloredhokla").style.display = "none";
+		}
+	}
+
+	function cityselectionu(){
+		document.getElementById("citysubmitu").style.display = "block";
+		if(s8.value == "Delhi")
+		{
+			document.getElementById("Delhiu").style.display = "block";
+			document.getElementById("Mumbaiu").style.display = "none";
+			document.getElementById("Chennaiu").style.display = "none";
+			document.getElementById("Bengaloreu").style.display = "none";
+			document.getElementById("Gujaratu").style.display = "none";
+		}
+		else if(s8.value == "Mumbai"){
+			document.getElementById("Mumbaiu").style.display = "block";
+			document.getElementById("Delhiu").style.display = "none";
+			document.getElementById("Chennaiu").style.display = "none";
+			document.getElementById("Bengaloreu").style.display = "none";
+			document.getElementById("Gujaratu").style.display = "none";
+		} else if(s8.value == "Chennai"){
+			document.getElementById("Chennaiu").style.display = "block";
+			document.getElementById("Delhiu").style.display = "none";
+			document.getElementById("Mumbaiu").style.display = "none";
+			document.getElementById("Bengaloreu").style.display = "none";
+			document.getElementById("Gujaratu").style.display = "none";
+		} else if(s8.value == "Bengalore"){
+			document.getElementById("Bengaloreu").style.display = "block";
+			document.getElementById("Chennaiu").style.display = "none";
+			document.getElementById("Delhiu").style.display = "none";
+			document.getElementById("Mumbaiu").style.display = "none";
+			document.getElementById("Gujaratu").style.display = "none";
+		} else if(s8.value == "Gujarat"){
+			document.getElementById("Gujaratu").style.display = "block";
+			document.getElementById("Chennaiu").style.display = "none";
+			document.getElementById("Delhiu").style.display = "none";
+			document.getElementById("Mumbaiu").style.display = "none";
+			document.getElementById("Bengaloreu").style.display = "none";
+		}
+	}
+
+	var ok = document.getElementById("ok");
+	var cancel = document.getElementById("cancel");
+	var prod = document.getElementById("myDiv");
+	var customs = document.getElementById("customize");
+	var p =document.getElementById("powered");
+	var okv;
+	ok.addEventListener("click",function(){
+		customs.style.display = "none";
+		p.style.display = "block";
+		okv = setTimeout(showpower,3000);
+	});
+	cancel.addEventListener("click",function(){
+		customs.style.display = "none";
+		prod.style.display = "block";
+		alert("Sorry For this Issue...Will be resolve in sometime.");
+	});
+
+	function showpower(){
+		p.style.display = "none";
+		prod.style.display = "block";
+	}
+
+	var myVar;
+	function myFunction() {
+	  myVar = setTimeout(showPage, 3000);
+	}
+	function showPage() {
+	  document.getElementById("loader").style.display = "none";
+	  document.getElementById("customize").style.display = "block";
+	}
+
+
+	filterSelection("all")
+	function filterSelection(c) {
+	var x, i;
+	x = document.getElementsByClassName("product");
+	if (c == "all") c = "";
+	for (i = 0; i < x.length; i++) {
+	w3RemoveClass(x[i], "show");
+	if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+	}
+	}
+
+	function w3AddClass(element, name) {
+	var i, arr1, arr2;
+	arr1 = element.className.split(" ");
+	arr2 = name.split(" ");
+	for (i = 0; i < arr2.length; i++) {
+	if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+	}
+	}
+
+	function w3RemoveClass(element, name) {
+	var i, arr1, arr2;
+	arr1 = element.className.split(" ");
+	arr2 = name.split(" ");
+	for (i = 0; i < arr2.length; i++) {
+	while (arr1.indexOf(arr2[i]) > -1) {
+	arr1.splice(arr1.indexOf(arr2[i]), 1);     
+	}
+	}
+	element.className = arr1.join(" ");
+	}
+
+	var btnContainer = document.getElementById("myBtn");
+	var btns = btnContainer.getElementsByClassName("btn");
+	for (var i = 0; i < btns.length; i++) {
+	btns[i].addEventListener("click", function(){
+	var current = document.getElementsByClassName("active");
+	current[0].className = current[0].className.replace(" active", "");
+	this.className += " active";
+	});
+	}
+
+	function redirect(){
+		if(document.getElementById("location").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=9db6b02d986494c310e8d6fa99d935f8_2");
+		} else if(document.getElementById("location").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=9db6b02d986494c310e8d6fa99d935f8_2");
+		} else if(document.getElementById("location").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=9db6b02d986494c310e8d6fa99d935f8_2");
+		} else if(document.getElementById("location").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=9db6b02d986494c310e8d6fa99d935f8_2");
+		} else if(document.getElementById("location").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=9db6b02d986494c310e8d6fa99d935f8_2");
+		}
+	}
+
+	function redirect1(){
+		if(document.getElementById("locationd").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=9d20b49f8cf0c79ce7b44b2ef69f51df_2");
+		} else if(document.getElementById("locationd").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=9d20b49f8cf0c79ce7b44b2ef69f51df_2");
+		} else if(document.getElementById("locationd").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=9d20b49f8cf0c79ce7b44b2ef69f51df_2");
+		} else if(document.getElementById("locationd").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=9d20b49f8cf0c79ce7b44b2ef69f51df_2");
+		} else if(document.getElementById("locationd").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=9d20b49f8cf0c79ce7b44b2ef69f51df_2");
+		}
+	}
+
+	function redirect2(){
+		if(document.getElementById("locationv").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=20ddceaed2707f13ab52c6d88bce7f16_2");
+		} else if(document.getElementById("locationv").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=20ddceaed2707f13ab52c6d88bce7f16_2");
+		} else if(document.getElementById("locationv").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=20ddceaed2707f13ab52c6d88bce7f16_2");
+		} else if(document.getElementById("locationv").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=20ddceaed2707f13ab52c6d88bce7f16_2");
+		} else if(document.getElementById("locationv").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=20ddceaed2707f13ab52c6d88bce7f16_2");
+		}
+	}
+
+	function redirect3(){
+		if(document.getElementById("locationdm").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=68c1e14b6ddd4f14b0f0ce7c259fbea9_2");
+		} else if(document.getElementById("locationdm").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=68c1e14b6ddd4f14b0f0ce7c259fbea9_2");
+		} else if(document.getElementById("locationdm").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=68c1e14b6ddd4f14b0f0ce7c259fbea9_2");
+		} else if(document.getElementById("locationdm").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=68c1e14b6ddd4f14b0f0ce7c259fbea9_2");
+		} else if(document.getElementById("locationdm").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=68c1e14b6ddd4f14b0f0ce7c259fbea9_2");
+		}
+	}
+
+	function redirect4(){
+		if(document.getElementById("locationi").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=2286695b8356ff71e16a100a76ce59c7_2");
+		} else if(document.getElementById("locationi").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=2286695b8356ff71e16a100a76ce59c7_2");
+		} else if(document.getElementById("locationi").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=2286695b8356ff71e16a100a76ce59c7_2");
+		} else if(document.getElementById("locationi").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=2286695b8356ff71e16a100a76ce59c7_2");
+		} else if(document.getElementById("locationi").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=2286695b8356ff71e16a100a76ce59c7_2");
+		}
+	}
+
+	function redirect5(){
+		if(document.getElementById("locationbs").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=c0d2373ba7f428e17b3874b18d5acb7f_2");
+		} else if(document.getElementById("locationbs").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=c0d2373ba7f428e17b3874b18d5acb7f_2");
+		} else if(document.getElementById("locationbs").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=c0d2373ba7f428e17b3874b18d5acb7f_2");
+		} else if(document.getElementById("locationbs").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/blue-marble-cunningham-road-bangalore");
+		} else if(document.getElementById("locationbs").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=c0d2373ba7f428e17b3874b18d5acb7f_2");
+		}
+	}
+
+	function redirect6(){
+		if(document.getElementById("locationt").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=361f59759ef3ee9c71982b85dadfaf20_2");
+		} else if(document.getElementById("locationt").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=361f59759ef3ee9c71982b85dadfaf20_2");
+		} else if(document.getElementById("locationt").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=361f59759ef3ee9c71982b85dadfaf20_2");
+		} else if(document.getElementById("locationt").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=361f59759ef3ee9c71982b85dadfaf20_2");
+		} else if(document.getElementById("locationt").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=361f59759ef3ee9c71982b85dadfaf20_2");
+		}
+	}
+
+	function redirect7(){
+		if(document.getElementById("locationdhokla").value == "Delhi"){
+			window.location.assign("https://www.zomato.com/ncr/delivery?dishv2_id=764a42eb42f44a2a530e0157b1d86901_2");
+		} else if(document.getElementById("locationdhokla").value == "Mumbai"){
+			window.location.assign("https://www.zomato.com/mumbai/delivery?dishv2_id=764a42eb42f44a2a530e0157b1d86901_2");
+		} else if(document.getElementById("locationdhokla").value == "Chennai"){
+			window.location.assign("https://www.zomato.com/chennai/delivery?dishv2_id=764a42eb42f44a2a530e0157b1d86901_2");
+		} else if(document.getElementById("locationdhokla").value == "Bengalore"){
+			window.location.assign("https://www.zomato.com/bangalore/delivery?dishv2_id=764a42eb42f44a2a530e0157b1d86901_2");
+		} else if(document.getElementById("locationdhokla").value == "Gujarat"){
+			window.location.assign("https://www.zomato.com/ahmedabad/delivery?dishv2_id=764a42eb42f44a2a530e0157b1d86901_2");
+		}
+	}
+
+	function redirect8(){
+		confirm("Sorry Not Available at selected state.")
+	}
+
+	function clickreview1(){
+		window.location.assign("https://www.google.com/search?tbs=lf:1,lf_ui:9&tbm=lcl&sxsrf=AOaemvKUB0nllX9FcubN96xLslXXAGmKFA:1631342819719&q=chole+bhature+review+all+india&rflfq=1&num=10&sa=X&ved=2ahUKEwjXiZrKqfbyAhWTyzgGHd4IBDMQjGp6BAgGEE0&biw=1366&bih=657#rlfi=hd:;si:;mv:[[28.738298699999998,77.3155565],[28.519262299999998,77.07268619999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9");
+	}
+
+	function clickreview2(){
+		window.location.assign("https://www.google.com/search?q=dosa+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvJvs8qUtDHQFilQW2tbU7bOXJ_l4g%3A1631342823638&ei=51A8YZ2lJpmU4-EP0q6GsAY&oq=dosa+review+all+india&gs_l=psy-ab.3...138180.140751.0.141485.17.8.0.0.0.0.279.710.0j1j2.3.0....0...1c.1.64.psy-ab..15.1.278...0i8i30k1j0i8i10i30k1.0.XFhPDz1aMOY#rlfi=hd:;si:;mv:[[28.705007400000003,77.39562719999999],[28.562711600000004,77.1580512]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9");
+	}
+
+	function clickreview3(){
+		window.location.assign("https://www.google.com/search?q=+mojito+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvIIbgIy9QJG_IrXCTJF-qcuOL_9Lg%3A1631342996215&ei=lFE8YbDTDMSy9QPOg5W4DA&oq=+mojito+review+all+india&gs_l=psy-ab.3...2843.3460.0.4724.6.4.0.0.0.0.344.524.0j1j0j1.2.0....0...1c.1.64.psy-ab..4.1.179...35i304i39k1.0.Kgka9IWK7t8#rlfi=hd:;si:;mv:[[28.704396,77.3320779],[28.5183875,77.0569649]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3north_1indian_1restaurant!1m4!1u5!2m2!5m1!1sgcid_3chinese_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!2m1!1e2!2m1!1e5!2m1!1e1!2m1!1e3!3sIAEqAklO,lf:1,lf_ui:9");
+	}
+
+	function clickreview4(){
+		window.location.assign("https://www.google.com/search?q=dal+makhani+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvL9uUuuxcHT6nbJw2VywNq4w_Qjlw%3A1631343011101&ei=o1E8YavHBdG-9QP6sJ4o&oq=dal+makhani+review+all+india&gs_l=psy-ab.3...129270.131985.0.132308.17.12.0.0.0.0.379.1879.0j2j2j3.7.0....0...1c.1.64.psy-ab..14.2.513...0i8i30k1j0i8i10i30k1j0i8i7i30k1.0.M4vc_RGT4HA#rlfi=hd:;si:;mv:[[33.7104952,80.66164739999999],[11.7998845,72.4287923]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9");
+	}
+
+	function clickreview5(){
+		window.location.assign("https://www.google.com/search?q=idli+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvKH0nimU6jbj58HWCMyBoUkG2rvqg%3A1631343144943&ei=KFI8YfH8ONuP9QPMgoqwCQ&oq=idli+review+all+india&gs_l=psy-ab.3...10977.13649.0.15448.17.10.0.0.0.0.390.1699.2-1j4.5.0....0...1c.1.64.psy-ab..14.2.678...0i333k1j0i8i30k1j0i8i10i30k1.0.D9nyEWa5ZLY#rlfi=hd:;si:;mv:[[28.685867899999995,77.46931359999999],[28.4669161,77.0599008]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9");
+	}
+
+	function clickreview6(){
+		window.location.assign("https://www.google.com/search?q=blue+mocktail+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvIW2BstPCaPKYhkHp9zFK1wKIVsgg%3A1631343162034&ei=OlI8YcbWAcGl9QOW-4qIBw&oq=blue+mocktail+review+all+india&gs_l=psy-ab.3...18342.30407.0.30729.17.17.0.0.0.0.564.2005.0j1j2j1j1j1.6.0....0...1c.1.64.psy-ab..13.1.176...0i8i30k1j0i8i10i30k1.0.4K_3rKxMX5E");
+	}
+
+	function clickreview7(){
+		window.location.assign("https://www.google.com/search?q=thali+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvLmCetW4Rylbvf41zZBg5QxQwVO0Q%3A1631343194525&ei=WlI8YZDBH9ae9QOV8qKYCQ&oq=thali+review+all+india&gs_l=psy-ab.3...119338.122203.0.122580.18.10.0.0.0.0.289.820.2-3.3.0....0...1c.1.64.psy-ab..16.1.256...0i8i30k1j0i8i10i30k1.0.pcL98Mz-81U#rlfi=hd:;si:;mv:[[28.6476816,77.32478379999999],[28.412475399999998,77.0874977]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!2m1!1e2!2m1!1e1!2m1!1e3!3sIAE,lf:1,lf_ui:9");
+	}
+
+	function clickreview8(){
+		window.location.assign("https://www.google.com/search?q=dhokla+review+all+india&biw=1366&bih=657&tbm=lcl&sxsrf=AOaemvIkUgVGH8L9iGn2SwsGwiD7pqzcag%3A1631343318310&ei=1lI8YcuxEoKy9QPptZCwAw&oq=dhokla+review+all+india&gs_l=psy-ab.3...11843.18075.0.18360.11.9.0.0.0.0.289.1090.0j1j4.5.0....0...1c.1.64.psy-ab..6.2.402...0i8i30k1j0i8i10i30k1j0i8i7i30k1.0.9g5DaqEFnMc#rlfi=hd:;si:;mv:[[28.718747399999998,77.39600449999999],[28.4236595,77.04510499999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!2m1!1e2!2m1!1e1!2m1!1e3!3sIAE,lf:1,lf_ui:9");
+	}
+
+	function clickreview9(){
+		confirm("Sorry Not Found!!")
+	}
+
+
+</script>
+</html>

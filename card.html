@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.contain{
+		border: 2px solid black;
+		width: 600px;
+		height: 400px;
+		margin-left: 380px;
+		margin-top: 100px;
+		border-radius: 20px;
+		box-shadow: 5px 5px 5px black;
+	}
+
+	header{
+		text-align: center;
+		background-color: lime;
+		color: #f1f1f1;
+		height: 50px;
+		font-size: 40px;
+		width: 100%;
+		border: 2px solid black;
+		border-radius: 20px;
+	}
+
+	.contain .in input{
+		margin-top: 20px;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: 43px;
+		cursor: pointer;
+		border-radius: 10px;
+		background: transparent;
+		border: 2px solid black;
+	}
+	
+	hr{
+		border: 1px solid black;
+	}
+
+	.contain .in input:hover{
+		background-color: lime;
+		color: #f1f1f1;
+	}
+
+	.credit{
+		text-align: center;
+		margin-top: 20px;
+		width: 100%;
+		height: 70%;
+	}
+	#para{  
+		margin-top: 100px;
+		text-decoration: underline;
+	}
+
+	#cc{	
+		display: none;
+		text-align: center;
+		text-decoration: underline;
+		margin-top: -60px;
+	}
+
+	#dc{
+		text-align: center;
+		text-decoration: underline;
+		margin-top: -60px;
+		display: none;
+	}
+
+	.card{
+		margin-top: 80px;
+		display: none;
+	}
+
+	#card{
+		margin-left: -100px;
+		margin-bottom: 20px;
+	}
+
+	#visa1{
+		display: none;
+		margin-left: 10px;
+	}
+
+	#master{
+		display: none;
+		margin-left: 10px;
+	}
+	#rupey{
+		display: none;
+		margin-left: 10px;
+	}
+
+	#num{
+		width: 400px;
+	}
+
+	.expiry{
+		margin-left: -190px;
+		margin-bottom: 20px;
+	}
+
+	#cvv{
+		width: 30px;
+	}
+
+	.expiry #text{
+		margin-right: 50px;
+	}
+
+	.name{  
+		margin-left: -105px;
+		margin-bottom: 30px;
+	}
+	#name{
+		width: 365px;
+	}
+
+	#btn{
+		width: 100px;
+		border-radius: 10px;
+		border: 2px solid black;
+		background: rgb(173, 171, 171);
+		font-weight: bold;
+		box-shadow: 2px 2px 2px black;
+		cursor: pointer;
+	}
+	
+
+</style>
+<body>
+	<div class="contain">
+		<header>Payment-In</header>
+		<div class="in">
+			<input type="button" value="Credit-Card" id="visa">
+			<input type="button" value="Debit-Card" id="debit">
+			<input type="button" value="Upi" id="upi">
+			<input type="button" value="Net-Banking" id="net">
+		</div>
+		<hr>
+		<div class="credit" id="creditcard">
+			<p id="para">Please Select One Option For Payment</p>
+			<div class="card" id="cards">
+				<h2 id="cc">Credit-Card</h2>
+				<h2 id="dc">Debit-Card</h2>
+			<div id="card">
+				<label>Card-number:</label>
+				<input type="number" name="num" id="num" onblur="checkcredit()" placeholder="XXXX-XXXX-XXXX-XXXX" size="16" maxlength="16">
+				<img src="pics/visa.jpg" id="visa1" width="30px" height="30px">
+				<img src="pics/mastercard.png" id="master" width="30px" height="30px">
+				<img src="pics/Rupay-Logo.png" id="rupey" width="30px" height="30px">
+			</div>
+			<div class="expiry">
+				<label>Expiry-date:</label>
+				<input type="text" name="text" id="text" placeholder="MM/YY" required>
+				<label>CVV:</label>
+				<input type="password" name="cvv" id="cvv" size="3" maxlength="3" required>
+			</div>
+			<div class="name">
+				<label>Card-holder-name:</label>
+				<input type="text" name="name" id="name" placeholder="John Catley" required>
+			</div>
+			<button id="btn">Submit</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var v = document.getElementById("visa");
+	var d = document.getElementById("debit");
+	var u = document.getElementById("upi");
+	var n = document.getElementById("net");
+
+	v.addEventListener("click" ,function(){
+		document.getElementById("para").style.display = "none";
+		document.getElementById("cc").style.display = "block";
+		document.getElementById("dc").style.display = "none";
+		document.getElementById("cards").style.display = "block";
+	});
+
+	d.addEventListener("click" ,function(){
+		document.getElementById("para").style.display = "none";
+		document.getElementById("cc").style.display = "none";
+		document.getElementById("dc").style.display = "block";
+	});
+
+	function checkcredit(){
+		var check = document.getElementById("num");
+		// var valid = toString(check.value);
+		if(check.value.length <=16){
+			document.getElementById("visa1").style.display = "inline";
+			document.getElementById("card").style.marginLeft = "-58px";
+		}
+		else{
+			alert("Invalid account number")
+		}
+	}
+
+</script>
+</html>

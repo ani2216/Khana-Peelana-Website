@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Confirmation-Franchise</title>
+</head>
+<style>
+	body{
+		background-color: rgb(228, 226, 226);
+	}
+
+	.form{	
+		display: none;
+		background-color: #f1f1f1;
+		border: 5px solid black;
+		border-radius: 10px;
+		text-align: center;
+		margin-left: 530px;
+		margin-top: 100px;
+		width: fit-content;
+		height: 400px;
+	}
+
+	#tick{  
+		text-align: center;
+		border-radius: 50%;
+		border: 2px solid rgb(74, 173, 74);
+		color: rgb(74, 173, 74);
+		width: 70px;
+		font-size: 50px;
+		height: 70px;
+		margin-left: 100px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		animation: moves 5s 1;
+	}
+
+	@keyframes moves{
+		100%{transform: rotate(360deg);
+			background-color: rgb(74, 173, 74);
+		color: #f1f1f1;}
+	}
+
+	h2{
+		margin-bottom: 20px;
+		text-decoration: underline;
+	}
+
+	h3{
+		margin-bottom: 20px;
+	}
+	h4{
+		margin-bottom: 20px;
+	}
+
+	#btnconfirm{
+		width: 100px;
+		background: transparent;
+		border-radius: 3px;
+	}
+
+	#btnconfirm:hover{
+		background: rgb(74, 173, 74);
+		color: #f1f1f1;
+	}
+
+	body{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	width: 80px;
+	height: 80px;
+	margin: -76px 0 0 -76px;
+	border: 12px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 12px solid rgb(74, 178, 212);
+	border-bottom: 12px solid rgb(74, 178, 212);
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	}
+
+	@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+	}
+
+</style>
+<body onload="settimes()">  
+
+	<div id="loader">
+	</div>
+
+	<div class="form" id="forms">
+		<p id="tick"><b id="ticks">&#10003;</b></p>
+		<h2>Thank You</h2>
+		<h3>Successfully Submitted</h3>
+		<h4>We will call you at your's selected time.</h4>
+		<h4>Please Stay Tunned.</h4>
+		<button id="btnconfirm" onclick="oncall()">Ok</button>
+	</div>
+</body>
+<script>
+
+	var m;
+	function settimes(){
+		m = setTimeout(gettime,4000);
+	}
+	function gettime(){
+		document.getElementById("loader").style.display = "none";
+		document.getElementById("forms").style.display = "block";
+	}
+
+	function oncall(){
+	window.location.assign("frontPage.php")
+	}
+</script>
+</html>

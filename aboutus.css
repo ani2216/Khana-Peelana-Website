@@ -1,0 +1,114 @@
+body{
+		background-color:#f1f1f1;
+	}
+
+	#circle{
+		margin-left: 45%;
+		margin-top: 20%;
+		border: 3px solid black;
+		width: 100px;
+		height: 20px;
+		background-color: lightblue;
+		animation: anim 5s infinite;
+	}
+
+	@keyframes anim{
+		50%{
+			transform: rotate(360deg);
+		}
+	}
+
+	#loader{
+		animation: show 1s;
+	}
+
+	@keyframes show{
+		from{
+			bottom: -100%;
+			opacity: 0;
+		} to{
+			bottom: 0;
+			opacity: 1;
+		}
+	}
+
+	button{
+		position: fixed;
+		background-color: black;
+		color: #f1f1f1;
+		border: none;
+		margin-left: 92.6%;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		text-align: center;
+		top: 0;
+	}
+
+	img{	
+		filter: grayscale(100%);
+		animation: filt 5s infinite;
+		border: 3px solid red;
+		box-shadow: 5px 5px 5px brown;
+	}
+
+	@keyframes filt{
+		0%{
+			filter: grayscale(100%);
+		}
+		
+		25%{
+			filter: grayscale(75%);
+		}
+
+		50%{
+			filter: grayscale(50%);
+		}
+
+		75%{
+			filter: grayscale(25%);
+		}
+
+		100%{
+			filter: grayscale(0%);
+		}
+	}
+
+	a{
+		color: #f1f1f1;
+		text-decoration: none;
+	}
+
+	a:hover{
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	h1{
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	h2{
+		text-decoration: underline;
+	}
+
+	p{
+		font-family: serif;
+	}
+
+	img{
+		margin-left: 30%;
+	}
+
+	footer{
+	text-align: center;
+	width: 101.36%;
+	margin-left: -10px;
+	height: fit-content;
+	background: transparent;
+	color: white;
+	background-color: black;
+	font-size: bolder;
+	margin-bottom: -10px;
+}
